@@ -153,13 +153,7 @@ nav a:hover svg {
   transition: transform 0.3s;
 }
 
-#darkmode-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 40px;
-}
+
 
 .nav-btn {
   position: absolute;
