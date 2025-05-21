@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  transition: background 0.7s, color 0.7s;
+  
+}
+
+body.darkmode {
+  background: #181818;
+  color: #fff;
+}
+
+
+
+body.darkmode h1 {
+  color: #fff;
+}
+
+body.darkmode nav a {
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 900;
+  transition: background 0.4s, color 0.4s;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.4s, color 0.4s;
+}
+
+nav a svg {
+  transition: transform 0.3s;
+}
+
+nav a:hover svg {
+  transform: scale(1.3);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+
+  transition: background 0.4s, color 0.4s;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s, border-radius 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto; /* mantém o clique funcionando */
+}
+
+.gallery img:hover {
+  border-radius: 5px;
+  transform: scale(1.03);
+  z-index: 2;
+}
+
+.img-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.img-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.img-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #000;
+  transition: transform 0.3s;
+}
+
+/* Esconde o overlay por padrão */
+.gallery .fullscreen-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+/* Mostra o overlay ao passar o mouse na imagem */
+.gallery img:hover + .fullscreen-overlay {
+  display: flex;
+  opacity: 1;
+}
+
+/* Imagem centralizada e ampliada */
+.gallery .fullscreen-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #000;
+  transition: transform 0.3s;
+}
+
+#darkmode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
