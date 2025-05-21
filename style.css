@@ -82,7 +82,7 @@ nav {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  pointer-events: auto; /* mantém o clique funcionando */
+  pointer-events: auto; 
 }
 
 .gallery img:hover {
@@ -120,7 +120,7 @@ nav {
   transition: transform 0.3s;
 }
 
-/* Esconde o overlay por padrão */
+
 .gallery .fullscreen-overlay {
   display: none;
   position: fixed;
@@ -136,13 +136,13 @@ nav {
   opacity: 0;
 }
 
-/* Mostra o overlay ao passar o mouse na imagem */
+
 .gallery img:hover + .fullscreen-overlay {
   display: flex;
   opacity: 1;
 }
 
-/* Imagem centralizada e ampliada */
+
 .gallery .fullscreen-overlay img {
   max-width: 90vw;
   max-height: 90vh;

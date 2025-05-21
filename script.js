@@ -1,4 +1,4 @@
-const extensao = 'png'; // ou 'jpg'
+const extensao = 'png';
 const gallery = document.querySelector('.gallery');
 gallery.innerHTML = '<img src="images/image.png" alt="">';
 
@@ -12,12 +12,12 @@ function tryLoadNext() {
     tryLoadNext();
   };
   img.onerror = function() {
-    // Parou de encontrar imagens, não faz mais nada
+   
   };
 }
 tryLoadNext();
 
-// Overlay e darkmode (mantém seu código)
+
 const overlay = document.getElementById('imgOverlay');
 const overlayImg = document.getElementById('overlayImg');
 const darkmodeBtn = document.getElementById('darkmode-toggle');
